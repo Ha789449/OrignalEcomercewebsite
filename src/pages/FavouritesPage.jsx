@@ -1,7 +1,7 @@
 // pages/FavouritesPage.js
 import React from 'react';
 import { useSelector } from 'react-redux';
-// import { fetchProducts } from '../api/products';
+import { fetchProducts } from '../api/products';
 
 const FavouritesPage = () => {
   const favouriteItems = useSelector(state => state.favourites.favourites);

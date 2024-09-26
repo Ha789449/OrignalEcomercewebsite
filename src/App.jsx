@@ -1,31 +1,33 @@
+// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './redux/store';  // Redux store import
-import Navbar from './components/Navbar.jsx';  // Navbar component
-import Footer from './components/Footer.jsx';  // Footer component
-import HomePage from './pages/Homepage.jsx';  // HomePage component
-import ProductList from './components/ProductList.jsx';  // ProductList component
-import Cart from './components/Cart.jsx';  // Cart component
-import Favorites from './components/Favorites.jsx';  // Favorites component
-import Signup from './components/Signup.jsx';  // Signup component
-import Login from './components/Login.jsx';  // Login component
-import AboutUs from './components/About.jsx'; // Import the About Us component
+import store from './redux/store'; 
+import Navbar from './components/Navbar.jsx'; 
+import Footer from './components/Footer.jsx'; 
+import HomePage from './pages/Homepage.jsx'; 
+import ProductContainer from './components/ProductContainer'; // Import ProductContainer
+import Cart from './components/Cart.jsx';  
+import Favorites from './components/Favorites.jsx';  
+import Signup from './components/Signup.jsx';  
+import Login from './components/Login.jsx';  
+import AboutUs from './components/About.jsx'; 
+
 const App = () => {
     return (
-        <Provider store={store}>  {/* Redux Provider wraps the entire app */}
+        <Provider store={store}>
             <Router>
-                <Navbar />  {/* Navbar at the top of every page */}
+                <Navbar />
                 <Routes>
-                    <Route path="/" element={<HomePage />} />  {/* Home route */}
-                    <Route path="/products" element={<ProductList />} />  {/* Products list route */}
-                    <Route path="/cart" element={<Cart />} />  {/* Cart route */}
-                    <Route path="/favorites" element={<Favorites />} />  {/* Favorites route */}
-                    <Route path="/signup" element={<Signup />} />  {/* Signup route */}
-                    <Route path="/login" element={<Login />} />  {/* Login route */}
-                    <Route path="/about" element={<AboutUs />} /> {/* Add the About Us route */}
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/products" element={<ProductContainer />} /> {/* Update here */}
+                    <Route path="/cart" element={<Cart />} />
+                    <Route path="/favorites" element={<Favorites />} />
+                    <Route path="/signup" element={<Signup />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/about" element={<AboutUs />} />
                 </Routes>
-                <Footer />  {/* Footer at the bottom of every page */}
+                <Footer />
             </Router>
         </Provider>
     );

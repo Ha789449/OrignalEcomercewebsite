@@ -1,4 +1,4 @@
-// // src/components/ProductList.jsx
+// src/components/ProductList.jsx
 import React from 'react';
 
 const ProductList = ({ products, onAddToCart, onRemoveFromCart }) => {
@@ -10,10 +10,13 @@ const ProductList = ({ products, onAddToCart, onRemoveFromCart }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {products.map(product => (
                 <div key={product.id} className="border p-4 rounded bg-white shadow-md">
-                    <img src={product.image} alt={product.title} className="w-full h-48 object-cover mb-4 rounded" />
+                    <img 
+                        src={product.image} 
+                        alt={product.title} 
+                        className="w-full h-48 object-cover mb-4 rounded" // Ensure images are responsive
+                    />
                     <h2 className="font-bold">{product.title}</h2>
                     <p className="text-lg font-semibold">${product.price}</p>
-                    {/* Add to Cart button ko Remove button mein convert karenge */}
                     {onRemoveFromCart ? (
                         <button
                             onClick={() => onRemoveFromCart(product)}
